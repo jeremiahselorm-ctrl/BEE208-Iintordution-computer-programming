@@ -1,19 +1,20 @@
-#include <iostream>
+##include <iostream>
 using namespace std;
 
 int main() {
-    int a, b;
+    double voltage;
 
-    cout << "Enter two numbers: ";
-    cin >> a >> b;
+    for(int i = 1; i <= 10; i++) {
+        cout << "Enter battery voltage " << i << ": ";
+        cin >> voltage;
 
-    cout << "Before swapping: a = " << a << ", b = " << b << endl;
+        if(voltage < 10.5) {
+            cout << "Low battery detected. Test stopped.";
+            break;
+        }
 
-    a = a ^ b;
-    b = a ^ b;
-    a = a ^ b;
-
-    cout << "After swapping: a = " << a << ", b = " << b << endl;
+        cout << "Battery voltage normal.\n";
+    }
 
     return 0;
 }

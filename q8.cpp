@@ -2,15 +2,23 @@
 using namespace std;
 
 int main() {
-    int num;
+    double currentReading;
+    int safeCount = 0;
+    int unsafeCount = 0;
 
-    cout << "Enter an integer: ";
-    cin >> num;
+    cout << "Count Safe Current Readings\n";
+    for (int i = 1; i <= 8; ++i) {
+        cout << "Enter current reading " << i << " (A): ";
+        cin >> currentReading;
 
-    if (num % 2 != 0)
-        cout << "Odd number" << endl;
-    else
-        cout << "Even number" << endl;
+        if (currentReading <= 10.0) {
+            safeCount++;
+        } else {
+            unsafeCount++;
+        }
+    }
 
+    cout << "Safe readings: " << safeCount << "\n";
+    cout << "Unsafe readings: " << unsafeCount << "\n";
     return 0;
 }

@@ -2,14 +2,20 @@
 using namespace std;
 
 int main() {
-    int a, b;
+    double voltage;
 
-    cout << "Enter two integers: ";
-    cin >> a >> b;
+    cout << "Battery Voltage Monitoring\n";
+    cout << "Enter battery voltage readings. Enter a value below 12 V to stop.\n";
 
-    int larger = (a > b) ? a : b;
+    cout << "Enter battery voltage (V): ";
+    cin >> voltage;
 
-    cout << "Larger number = " << larger << endl;
+    while (voltage >= 12.0) {
+        cout << "Battery voltage normal: " << voltage << " V\n";
+        cout << "Enter battery voltage (V): ";
+        cin >> voltage;
+    }
 
+    cout << "Battery voltage low. Recharge required.\n";
     return 0;
 }

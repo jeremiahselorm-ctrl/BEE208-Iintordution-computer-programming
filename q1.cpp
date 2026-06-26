@@ -2,19 +2,25 @@
 using namespace std;
 
 int main() {
-    int a, b;
+    double voltage;
 
-    cout << "Enter two integers: ";
-    cin >> a >> b;
+    cout << "Voltage Level Classifier\n";
+    cout << "Enter the voltage reading (V): ";
+    cin >> voltage;
 
-    cout << "Sum = " << a + b << endl;
-    cout << "Difference = " << a - b << endl;
-    cout << "Product = " << a * b << endl;
+    cout << "Voltage reading: " << voltage << " V\n";
 
-    if (b != 0)
-        cout << "Quotient = " << (double)a / b << endl;
-    else
-        cout << "Division by zero is not allowed." << endl;
+    if (voltage < 0) {
+        cout << "Invalid voltage reading.\n";
+    } else if (voltage <= 50) {
+        cout << "Low voltage.\n";
+    } else if (voltage <= 240) {
+        cout << "Normal voltage.\n";
+    } else if (voltage <= 415) {
+        cout << "High voltage.\n";
+    } else {
+        cout << "Dangerous voltage.\n";
+    }
 
     return 0;
 }

@@ -2,14 +2,21 @@
 using namespace std;
 
 int main() {
-    float a, b;
+    double power, totalLoad = 0;
 
-    cout << "Enter two floating-point numbers: ";
-    cin >> a >> b;
+    while(totalLoad <= 3000) {
+        cout << "Enter appliance power rating (W): ";
+        cin >> power;
 
-    float larger = (a > b) ? a : b;
+        totalLoad += power;
 
-    cout << "Larger number = " << larger << endl;
+        if(totalLoad > 3000) {
+            cout << "Load limit exceeded. Do not add more appliances.\n";
+            break;
+        }
+    }
+
+    cout << "Final Total Load = " << totalLoad << " W";
 
     return 0;
 }

@@ -1,17 +1,18 @@
 #include <iostream>
-#include <string>
 using namespace std;
 
 int main() {
-    string text;
+    double reading, totalVoltage = 0.0;
+    const int numberOfReadings = 10;
 
-    cout << "Enter a string: ";
-    getline(cin, text);
+    cout << "Average Voltage from Sensor Readings\n";
+    for (int i = 1; i <= numberOfReadings; ++i) {
+        cout << "Enter voltage reading " << i << " (V): ";
+        cin >> reading;
+        totalVoltage += reading;
+    }
 
-    if (text.find('a') != string::npos)
-        cout << "Contains 'a'" << endl;
-    else
-        cout << "Does not contain 'a'" << endl;
-
+    double averageVoltage = totalVoltage / numberOfReadings;
+    cout << "Average voltage = " << averageVoltage << " V\n";
     return 0;
 }
